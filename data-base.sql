@@ -1,7 +1,7 @@
 create database db_memMoradias;
 use db_memMoradias;
 create table tb_admin(
-    id int primary key auto_increment,
+    id_adm int primary key,
     nome varchar(50) not null,
     CPF varchar(14) not null unique,
     email varchar(50) not null unique,
@@ -50,6 +50,8 @@ create table tb_pagamentos(
     status_pagamento varchar(20) not null,
     foreign key (id_reserva) references tb_reservas(id_reserva)
 );
-insert into tb_admin (nome, CPF, email, senha) values
-('Thais Martin Martin', '442.340.498-24', 'thaismmartin@gmail.com', '140872'),
-('Vitor Martin Amaro', '442.340.498-24', 'vitor.mamaro@outlook.com', '140872');
+insert into tb_admin (id_adm, nome, CPF, email, senha) values
+(1, 'Thais Martin Martin', '442.340.498-22', 'thaismmartin@gmail.com', '140877'),
+(2, 'Vitor Martin Amaro', '442.340.498-24', 'vitor.mamaro@outlook.com', '140872');
+use db_memMoradias;
+select * from tb_admin;
